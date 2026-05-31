@@ -82,6 +82,32 @@ Rules:
 
     st.subheader("Interview Q&A")
 
-    for i, item in enumerate(data, start=1):
-        with st.expander(f"Q{i}: {item['question']}"):
+    st.subheader("Interview Q&A")
+
+for i, item in enumerate(data, start=1):
+
+    qtype = item.get("type", "Theory")
+
+    with st.expander(f"{qtype} Q{i}: {item['question']}"):
+
+        # MCQ Questions
+        if qtype == "MCQS":
+
+            st.radio(
+                "Choose an option:",
+                item.get("options", []),
+                key=f"mcq_{i}"
+            )
+
+            if st.button("Show Answer", key=f"answer_{i}"):
+                st.success(item["answer"])
+
+        # Coding Questions
+        elif qtype == "Coding":
+
+            st.write("### Solution")
+            st.code(item["answer"], language="python")
+
+        # Theory Questions
+        else:
             st.write(item["answer"])
