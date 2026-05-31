@@ -21,6 +21,38 @@ Generate exactly 10 {level} interview questions on {topic}.
 
 Selected Types: {qtype}
 
+IMPORTANT:
+
+If Question Type contains MCQS, every question MUST be:
+
+{{
+    "type":"MCQS",
+    "question":"What is Python?",
+    "options":[
+        "A. Operating System",
+        "B. Programming Language",
+        "C. Database",
+        "D. Browser"
+    ],
+    "answer":"B. Programming Language"
+}}
+
+If Question Type contains Coding:
+
+{{
+    "type":"Coding",
+    "question":"Write a Python program to reverse a string",
+    "answer":"def reverse(s): return s[::-1]"
+}}
+
+If Question Type contains Theory:
+
+{{
+    "type":"Theory",
+    "question":"What is Python?",
+    "answer":"Python is ..."
+}}
+
 
 Return ONLY a JSON array of objects:
 
