@@ -10,7 +10,7 @@ with st.form("Details"):
 
     topic = st.text_input("Enter Language Topic")
     level = st.selectbox("Choose Level", ["Easy", "Medium", "Hard", "Advanced"])
-    type = st.multiselect("Choose type",["MCQS","Theory","Coding"])
+    qtype = st.multiselect("Choose type", ["MCQS", "Theory", "Coding"])
 
     submit = st.form_submit_button("Generate")
 
@@ -42,7 +42,8 @@ Rules:
     st.write("Status:", response.status_code)
 
     res = response.json()
-    data = json.loads(res["object"])
+
+    data = json.loads(res["object"])   # now safe
 
     st.subheader("Interview Q&A")
 
