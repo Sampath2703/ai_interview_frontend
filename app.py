@@ -4,7 +4,7 @@ import pandas as pd
 import ast
 import json
 
-server_location = "http://127.0.0.1:8000"
+server_location = st.secrets["backend_server"]
 
 st.title("AI Interview Chat Bot")
 
