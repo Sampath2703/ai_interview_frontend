@@ -17,7 +17,10 @@ with st.form("Details"):
 if submit:
 
     prompt = f"""
-Generate 10 {level} interview questions on {topic}.
+Generate exactly 10 {level} interview questions on {topic}.
+
+Selected Types: {qtype}
+
 
 Return ONLY a JSON array of objects:
 
